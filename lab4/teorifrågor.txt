@@ -1,0 +1,7 @@
+1. Datastrukturen used används för att laga alla ord som redan kollats. Breddenförstsökning används då vi vill hitta de kortaste vägarna och printa den längsta av dessa. Programet håller reda på orden i kedjan genom att varje WordRec pekar mot en parent node vilket gör upp lösningskedjan.
+
+2. Inom vectorer fungerar memtoden contains på samma sätt som i en vanlig arraylist. Den måste traversera hela vectorn vilket ger O(n) i tidskommplexitet för både värsta och det genomsnittliga fallet. Datastrukturen användes när man kollade ifall ett ord fanns i antingen usedlistan eller inmatningsfilen. Vi har valt att ändra från vectors till HashSets då HashSets har en mycket bättre average tidskomplexitet när det kommer till contain metoden. HashSets contain metod kännetäcknas även av sin effektivitet när det kommer till stora mängder data.
+
+3. I värsta fall skapades ett string object för varje ord i indatafilen. Vi valde att konvertera till en character array för att kunna modifiera orden utan att skapa nya string objects.
+
+4. Vi valde att göra själva breddenförstsökningen "baklänges" genom att utgå från vårat "endWord" somm vårat "startword" och därefter leta efter null som "goalword". På detta vis hittar vi och lagrar den längsta kortaste vägen FRÅN ett enda ord istället för alla ord. Vi printar därefter ut i omvänd ordning för att få den korrekta ordkedjan.
